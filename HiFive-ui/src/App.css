@@ -23,3 +23,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.bro-button {
+  border: 0.012em solid #777;
+  border-radius: 0.25em;
+  font-size: 22px;
+  margin-top: 2em;
+  background-color: #d9edf7;
+}
+
+.bro-five-icon {
+  margin: 0 0.2em;
+}
