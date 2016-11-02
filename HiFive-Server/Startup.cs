@@ -28,6 +28,7 @@ namespace HiFive
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddCors();
             services.AddMvc();
         }
 
@@ -37,6 +38,8 @@ namespace HiFive
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin());
             app.UseMvcWithDefaultRoute();
         }
     }
