@@ -18,6 +18,9 @@ namespace HiFive.Controllers
                 }
             }
 
+            // reset datetime for next HiFive
+            bachelor.nextHiFive = (Datetime?)null;
+
             return "Hey buddy! Hi 5?!";
         }
 
