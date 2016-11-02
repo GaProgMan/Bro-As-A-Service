@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace HiFive.Controllers
 {
     [RouteAttribute("/")]
-    public class HiFiveController : Controller {
-
+    public class HiFiveController : Controller
+    {
         [HttpGet]
         public string Get()
         {
