@@ -30,7 +30,7 @@ namespace HiFive.Controllers
             {
                 return "Can't Hi 5 right now, Bro!";
             }
-            bachelor.nextHiFive = DateTime.Now.AddSeconds(30);
+            bachelor.nextHiFive = DateTime.Now.AddSeconds(5);
             return "YEAAAAH WOOOOOH!!!";
         }
     }
