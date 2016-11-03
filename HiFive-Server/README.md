@@ -1,5 +1,25 @@
 # Bro As A Service - .NET Core
 
+## Description
+
+``HiFive-Server`` is a Bro-tastic server which responds to Hi 5 requests.
+
+Sending an HTTP GET will tell the user whether they can Hi 5 or not, and a Hi 5 is performed by sending an HTTP POST, Bro!
+
+The POST will return with one of two responses:
+
+1. Can't Hi 5 right now, Bro!
+
+   This means that there is another Bro who has Hi 5'd and the current Bro will have to wait until `HiFive-Server`'s Hi 5 timer has timed out, at which point the "Give Hi 5" button will be re-enabled.
+
+1. YEAAAAH WOOOOOH!!!
+
+   This means that the current Bro's Hi 5 was met by `HiFive-Server`'s Hi 5-ing arm. All Bros will have to wait until the timeout for the Hi 5 is passed (because you can't have too much of a good thing)
+
+By default an HTTP GET will respond with: "Hey buddy! Hi 5?!".
+
+This is unless the timeout is active, in which "Can't Hi 5 right now, Bro!" will be returned and the "Give Hi5" button will be disabled until the timeout is reached.
+
 ## Building and Running
 
 1. Change directory to the root of the code
@@ -20,7 +40,7 @@
 
     `dotnet run`
 
-    This will start the Kestrel webserver, load the HiFive-Server application and tell you, via the terminal, what the url to access HiFive-Server will be. Usually this will be `http://localhost:5000`, but it may be different based on your system configuration.
+    This will start the Kestrel webserver, load the `HiFive-Server` application and tell you, via the terminal, what the url to access `HiFive-Server` will be. Usually this will be `http://localhost:5000`, but it may be different based on your system configuration.
 
 ## Polling the Server
 
@@ -57,7 +77,7 @@ If multiple users issue a POST at the same time, then the first to be recieved w
      - User A clicks "Give Hi5" (sends a POST)
      - User A recieves "YEAAAAH WOOOOOH!!!"
      - User B connects and "BROOOOO!" is displayed along with an active button
-     - User B clicks "Give Hi 5" (sends POST)
+     - User B clicks "Give Hi5" (sends POST)
      - User B recieves "Can't Hi 5 right now, Bro!" and button is disabled
      - User B never recieves an active button after the timeout
 
