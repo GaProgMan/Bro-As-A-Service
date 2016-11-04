@@ -10,9 +10,9 @@ class App extends Component {
           <i className="fa fa-hand-rock-o fa-5x bro-con" />
           <h2>Bro as a Service Bro! It's bro-tactular broseph!</h2>
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <HiFiveContainer />
-        </p>
+        </div>
       </div>
     );
   }
