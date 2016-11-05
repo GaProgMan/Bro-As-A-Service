@@ -17,22 +17,22 @@ class HiFiveContainer extends Component {
   }
 
   doHiFive() {
-    this.makeServerCall()
-      .then(brosponse => {
+    this.makeServerCall(brosponse => {
+      this.setState({
+        brosponse,
+        isHiFived: true,
+      });
+
+      this.makeServerCall(brosponse => {
         this.setState({
           brosponse,
-          isHiFived: true,
+          isHiFived: false,
         });
-
-        this.makeServerCall()
-          .then(brosponse => this.setState({
-            brosponse,
-            isHiFived: false,
-          }));
       });
+    });
   }
 
-  makeServerCall() {
+  makeServerCall(cb) {
     var callConfiguration = {};
     if (!this.state.isHiFived) callConfiguration.method = 'POST';
 
@@ -40,10 +40,20 @@ class HiFiveContainer extends Component {
       fetch('//localhost:5000/', callConfiguration)
         .then(response => {
           if (response.status >= 400) {
-            throw new Error('No bro\'s available bro');
+            this.setState({
+              brosponse: 'No bro\'s available bro',
+              isHiFived: false
+            });
           }
 
           return response.text();
+        })
+        .then(cb)
+        .catch(() => {
+          this.setState({
+            brosponse: 'No bro\'s available bro',
+            isHiFived: false
+          })
         })
     );
   }
