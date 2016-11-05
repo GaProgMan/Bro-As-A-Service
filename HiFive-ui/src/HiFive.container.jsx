@@ -44,6 +44,7 @@ class HiFiveContainer extends Component {
               brosponse: 'No bro\'s available bro',
               isHiFived: false
             });
+            throw new Error('No bro\'s available bro');
           }
 
           return response.text();
