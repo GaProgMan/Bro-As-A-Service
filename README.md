@@ -1,6 +1,6 @@
 # Bro-As-A-Service
 
-Bro-As-A-Service is a collaboration project started by [zacbraddy](http://thereactionary.net/) and [GaProgMan](http://dotnetcore.gaprogman.com/).
+Bro-As-A-Service is a collaboration project started by [zacbraddy](http://thereactionary.net/) and [GaProgMan](https://dotnetcore.gaprogman.com/).
 
 It started as a discussion on the official [Slack team](https://codingblocks.slack.com) for the [Coding Blocks](http://www.codingblocks.net/) podcast.
 
