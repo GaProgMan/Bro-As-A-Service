@@ -11,7 +11,7 @@ To build a webservice which will allow a user to initiate a virtual Hi-Five.
 Bro-As-A-Service is comprised of two parts:
 
 1. **HiFive-Ui**
-1. **HiFive-Server*
+1. **HiFive-Server**
 
 HiFive-ui is a ReactJs project and zacbraddy has provided a write up about it on [GaProgMan's blog](https://dotnetcore.gaprogman.com/2016/11/17/you-got-a-friend-in-me-building-a-react-front-end-friend-for-a-net-core-app/)
 
